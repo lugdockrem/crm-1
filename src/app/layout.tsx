@@ -1,4 +1,7 @@
 import React from 'react';
+import type { Metadata } from 'next'
+
+// These styles apply to every route in the application
 import './globals.css'
 
 export default function RootLayout({
