@@ -12,9 +12,9 @@
     "@headlessui/react": "^2.2.4",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
-    "next": "15.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "next": "^14.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
