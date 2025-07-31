@@ -57,10 +57,10 @@ export interface Promotion {
 const PROJECT_TOKEN = process.env.NEXT_PUBLIC_PROJECT_TOKEN;
 
 const buildUrl = (...paths: string[]) =>
-    `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
+  `https://${PROJECT_TOKEN}.mockapi.io/api/v1/${paths.join('/')}`;
 
 const stringifyQueryParams = (params: Record<string, string>) =>
-    new URLSearchParams(params).toString();
+  new URLSearchParams(params).toString();
 
 const sendRequest = async <T>(url: string, init?: RequestInit) => {
   const res = await fetch(url, init);
@@ -96,18 +96,18 @@ export const getCompany = (id: string, init?: RequestInit) => {
 };
 
 export const getPromotions = async (
-    params: Record<string, string> = {},
-    init?: RequestInit,
+  params: Record<string, string> = {},
+  init?: RequestInit,
 ) => {
   return sendRequest<Promotion[]>(
-      `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
-      init,
+    `${buildUrl('promotions')}?${stringifyQueryParams(params)}`,
+    init,
   );
 };
 
 export const createCompany = async (
-    data: Omit<Company, 'id' | 'hasPromotions'>,
-    init?: RequestInit,
+  data: Omit<Company, 'id' | 'hasPromotions'>,
+  init?: RequestInit,
 ) => {
   return sendRequest<Company>(buildUrl('companies'), {
     ...init,
@@ -121,8 +121,8 @@ export const createCompany = async (
 };
 
 export const createPromotion = async (
-    data: Omit<Promotion, 'id'>,
-    init?: RequestInit,
+  data: Omit<Promotion, 'id'>,
+  init?: RequestInit,
 ) => {
   return sendRequest<Promotion>(buildUrl('promotions'), {
     method: 'POST',
